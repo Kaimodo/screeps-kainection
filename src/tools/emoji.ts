@@ -1,5 +1,3 @@
-import { Memory } from "../../test/unit/mock";
-
 export const Emoji = {
 	skull: String.fromCodePoint(0x1f480), // 💀
 	tick: String.fromCodePoint(0x2705), // ✅
@@ -58,7 +56,7 @@ export const Splash = () => {
 |   __|     | __  |   __|   __|  _  |   __|  |     |__|  | __  |  |  |
 |__   |   --|    -|   __|   __|   __|__   |  |  |  |  |  | __ -|    -|
 |_____|_____|__|__|_____|_____|__|  |_____|  |_____|_____|_____|__|__|
-Version: $}   |   Build Time:
+Version:    |   Build Time:
 </p>
 `);
 };
