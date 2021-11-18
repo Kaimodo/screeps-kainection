@@ -1,7 +1,9 @@
 
-# Screeps-Typescript-Starer-Modded
+# Screeps-Kainection
 
 ![ ](https://screeps.com/images/logotype-animated.svg)
+
+my "INSANE NUMBER"-attempt for Screeps
 
 # What me added
 
@@ -9,24 +11,11 @@ Screeps-Inscribe from ([resir014](https://github.com/resir014/screeps-inscribe))
 
 Logger from ([resir014](https://github.com/resir014/Stonehenge))
 
-Traveler from ([bonzaiferroni](https://github.com/bonzaiferroni/Traveler)) - not working atm.
-
 JS2FlowChart from ([Bogdan-Lyashenko](https://github.com/Bogdan-Lyashenko/js-code-to-svg-flowchart))
 
 ## Info 4 JS2Flow
 
 JS2Flow throws some errors in the way i use it. i couldn't find out how to use it "correct". I start it via npm which executes a Powershell-Script. But basically it works. There is some error with "optional chaining" in flow2js. i tryed to install those plugins manualy but it won't work. Well, this is thought to use with js not ts...
-
-## Console Commands
-
-  Commands are defined in Consolecommands.ts
-  Test if they work by typing in
-  ```bash
-  cc.test()
-  ```
-  in the Console.
-
-# This is a slightly modded Version, so it fits to my depends. Feel free to use it.
 
 ## Helper
 
