@@ -6,8 +6,7 @@ import { USE_PROFILER } from "config";
 
 import * as Inscribe from "screeps-inscribe";
 
-import * as Logger from "tools/logger/logger";
-import {ENABLE_DEBUG_MODE} from "config";
+import {Logger} from "tools/logger/logger";
 
 import * as Tools from "tools/tools"
 
@@ -15,19 +14,16 @@ import { ConsoleCommands } from "tools/consolecommands";
 
 import { Emoji } from './tools/Emoji';
 
+import {Kainection} from "components/kainection";
+
 
 
 //New Script loaded
 console.log(`[${Inscribe.color("New Script loaded", "red")}] ${Emoji.reload}`);
 
-/*
-// Log Info
-if (Game.time % 25 === 0) {
-  Logger.log.info(Inscribe.color(room.name + "| E: "+ Game.rooms[room.name].energyAvailable + "| Har: " + SpawnManager.harvesters.length + "| Bui: "+ SpawnManager.builders.length + "| Upg: " + SpawnManager.upgraders.length +"|", "skyblue"));
-}
-*/
 if (USE_PROFILER) {
-  Logger.log.info("Profiler an: "+ USE_PROFILER);
+
+  console.log("Profiler an: "+ USE_PROFILER);
   Profiler.enable();
 }
 
@@ -46,7 +42,7 @@ export const loop = ErrorMapper.wrapLoop(() => {
       const version = process.env.npm_package_version;
       if (!Memory.version || Memory.version !== version) {
         Memory.version = version;
-        console.log(`${String(name)} ${String(version)}`);
+        // console.log(`${String(name)} ${String(version)}`);
       }
     } catch (error) {
       console.log(error);
@@ -54,14 +50,16 @@ export const loop = ErrorMapper.wrapLoop(() => {
 
 
     global.cc = ConsoleCommands;
-    console.log(`Current game tick is ${Game.time}`);
+    // console.log(`Current game tick is ${Game.time}`);
 
-    // Automatically delete memory of missing creeps
-    for (const name in Memory.creeps) {
-      if (!(name in Game.creeps)) {
-        delete Memory.creeps[name];
-      }
-    }
+    const kainection = new Kainection();
+    kainection.run();
+
+    const logger = new Logger();
+    logger.run();
+
     Tools.log_info()
+    Tools.ClearNonExistingCreeMemory();
+    // Tools.generatePixel(10000);
   });
 });

@@ -55,6 +55,7 @@ export function ClearNonExistingCreeMemory() {
  */
  export function generatePixel(bucketHight: number): void {
   if (Game.cpu.bucket >= bucketHight) {
+      console.log(`[${Inscribe.color("Generating Pixel ", "skyblue") }]`);
       Game.cpu.generatePixel();
   }
 }
